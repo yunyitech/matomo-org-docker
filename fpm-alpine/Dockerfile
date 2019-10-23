@@ -1,6 +1,10 @@
-FROM php:7.3-fpm-alpine
+FROM hub.c.163.com/library/php:7.3-fpm-alpine
+#FROM php:7.3-fpm-alpine
 
 LABEL maintainer="pierre@piwik.org"
+
+##国内repo源，让本地构建速度更快。
+#RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN set -ex; \
 	\
